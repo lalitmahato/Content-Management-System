@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/blogDetail.css' %}" />
+{% endblock %} {% block content %}
+<!-- Blog Single Start -->
+<section class="blogDetail">
+  <div class="container">
+    <div class="row blog">
+      <div class="blog-detail-left col-md-8">
+        <div id="content3" class="blogDetailContent">
+          <div class="blogDetail">
+            <h3>{{blogdetails.blog_title}}</h3>
+            <div class="blog-span d-flex justify-content-start gap-4">
+              <div class="blog-releaseDate">
+                <i class="far fa-calendar" aria-hidden="true"></i>
+                <span>{{blogdetails.list_date}}</span>
+              </div>
+              <div class="blog-categories">
+                <i class="fas fa-bookmark" aria-hidden="true"></i>
+                <span>{{blogdetails.blog_tag}}</span>
+              </div>
+            </div>
+            <img class="w-100" src="{{blogdetails.blog_image.url}}" />
+            <p>{{blogdetails.blog_describe}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="blog-detail-right col-md-4">
+        <h3>Recent Posts</h3>
+        {% for blog in blogs %}
+        <div class="recent-posts">
+          <div class="post-image">
+            <img src="{{blog.blog_image.url}}" alt="..." />
+          </div>
+          <div class="post-info ps-3">
+            <span>{{blog.list_date}}</span>
+            <p><a href="{% url 'blogs' blog.id %}">{{blog.blog_title}}</a></p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

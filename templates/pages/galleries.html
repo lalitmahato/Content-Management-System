@@ -1,0 +1,117 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+<!-- CSS Files for galleries -->
+<link rel="stylesheet" href="{% static 'css/gallery.css' %}" />
+{% endblock %} {% block content %}
+<!-- Hero image for gallery page -->
+<div class="hero-image"></div>
+<div class="gallery mt-5">
+  <div class="container">
+    <div
+      class="
+        gallery-heading
+        d-flex
+        justify-content-between
+        align-items-center
+        mb-4
+      "
+    >
+      <h2>Latest Memories</h2>
+    <!-- Descrbing total number of pages and total of of images in thay page -->
+      <strong class="page"
+        >Page <span id="current-page"></span> of
+        <span id="total-pages"></span>
+      </strong>
+    </div>
+    <div class="row" id="gallery-images">
+      {% for gallery in Galleries %}
+      <div class="col-md-3 gallery-image mb-4" key="{{gallery.id}}">
+        <img
+          class="w-100"
+          src="{{gallery.image.url}}"
+          alt="{{gallery.gallery_title}}"
+        />
+      </div>
+      {% endfor %}
+    </div>
+    <!-- Pagination containing Previous Next and all the pages numbers to go directory to that page -->
+    <nav class="paginate mt-4 mb-5" aria-label="Page navigation example">
+      <ul class="pagination justify-content-between">
+        <li class="page-item">
+          <a
+            class="page-link"
+            href="#"
+            aria-label="Previous"
+            id="previousGalleryPage"
+          >
+            <span aria-hidden="true">Previous Page</span>
+          </a>
+        </li>
+        <div id="paginationNumbers" class="d-flex"></div>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next" id="nextGalleryPage">
+            <span aria-hidden="true">Next Page</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- Image click overlyay with image title and the actual image -->
+<div class="single-image" id="imageOverlay" style="display: none">
+  <div class="container">
+    <div class="image-background">
+      <div
+        class="
+          image-heading
+          d-flex
+          justify-content-between
+          align-items-baseline
+        "
+      >
+        <div class="title">
+          <h6 id="galleryTitle"></h6>
+        </div>
+        <div class="closing-single-image" id="close">
+          <span>×</span>
+        </div>
+      </div>
+      <div class="image-body">
+        <img id="currentOverlayImage" class="w-100" src="" alt="" />
+      </div>
+      <!-- Previous na Next icons to see the images within the page -->
+      <div class="nex-prev-icons d-flex justify-content-between">
+        <div class="arrow prev">
+          <i
+            class="fas fa-arrow-left bg-white shadow"
+            id="previousImage"
+            aria-hidden="true"
+          ></i>
+        </div>
+        <div class="arrow next">
+          <i
+            class="fas fa-arrow-right bg-white shadow"
+            id="nextImage"
+            aria-hidden="true"
+          ></i>
+        </div>
+      </div>
+      <div
+        class="
+          image-footer
+          d-flex
+          justify-content-center
+          align-items-center
+          gap-2
+        "
+      >
+      <!-- Current Page and Total Pages -->
+        <span id="current"></span>of <span id="total"></span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block script %}
+<!-- JS Files for galleries -->
+<script src="{% static 'js/gallery.js' %}"></script>
+<script src="{% static 'js/galleryImage.js' %}"></script>
+--> {% endblock %}

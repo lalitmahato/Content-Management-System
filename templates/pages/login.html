@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+{% endblock %} {% block content %}
+<main>
+  <div class="login">
+    {% if messages %} {% for message in messages %}
+    <div class="alert alert-danger" role="alert">{{message}}</div>
+    {% endfor %} {% endif %}
+    <div class="container">
+      <div class="login-header d-flex flex-column align-items-center mb-2">
+        <img src="{% static 'img/hck_ing_group_logo.png'%}" alt="" /><br />
+      </div>
+      <form method="POST" class="border pe-5 ps-5 pb-5 pt-3">
+        {% csrf_token %}
+        <h1 class="heading fw-bold text-center">Sign In</h1>
+        <label for="email" class="pb-1">Email Address</label>
+        <input type="text" class="form-control mb-1" id="email" name="email" />
+        <label for="password" class="pb-1">Password</label>
+        <input
+          type="password"
+          class="form-control mb-3"
+          id="password"
+          name="password"
+        />
+        <button
+          onclick="location.href = '/login'"
+          type="submit"
+          class="btn d-flex align-items-center ms-auto me-auto"
+        >
+          Sign In
+        </button>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

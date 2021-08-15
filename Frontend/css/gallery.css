@@ -1,0 +1,110 @@
+.hero-image {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/HeroImages/heroImg1.png");
+  height: 50vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.gallery-image img {
+  min-height: 205px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+.page {
+  color: #198754;
+  font-size: 18px;
+  font-weight: 500;
+}
+#current-page,
+#total-pages {
+  padding: 0px 5px;
+}
+.paginate li a,
+.paginate li a:hover,
+.paginate li a:focus {
+  background: #198754;
+  color: #fff;
+  border-radius: 5px;
+}
+#paginationNumbers li {
+  padding: 0 5px;
+}
+#paginationNumbers li a {
+  padding: 13px 20px;
+  transition: 0.5s ease-in-out;
+  border-radius: 50px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.05);
+  color: #808080;
+  background: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+#paginationNumbers li a:hover {
+  background: #198754 !important;
+  color: #fff !important;
+}
+.active-paginate {
+  background: #198754 !important;
+  color: #fff !important;
+}
+.single-image {
+  display: none;
+  position: fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+}
+.image-background {
+  position: absolute;
+  width: 50%;
+  height: 64vh;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background: #fff;
+}
+.image-heading {
+  border-bottom: 2px solid #c2cdd7;
+}
+.image-heading h6 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 5px;
+  padding: 15px 20px;
+  padding-bottom: 5px;
+}
+.uploaded {
+  color: #909090;
+  padding: 0px 20px;
+}
+.image-body img {
+  max-height: 390px;
+}
+.closing-single-image span {
+  font-size: 40px;
+  border-radius: 50%;
+  line-height: 45px;
+  padding: 20px;
+  cursor: pointer;
+}
+.nex-prev-icons {
+  position: fixed;
+  left: -2%;
+  right: -2%;
+  top: 50%;
+  bottom: 50%;
+}
+.arrow i {
+  padding: 10px;
+  border-radius: 50px;
+}
+.image-footer {
+  height: 40px;
+  color: #909090;
+}

@@ -1,0 +1,9 @@
+.member h2:hover {
+    color: #74c043;
+}
+
+@media (max-width: 1200px) {
+    .member .member-image img {
+        min-height: 219px;
+    }
+}

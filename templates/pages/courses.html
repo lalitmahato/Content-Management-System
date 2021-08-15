@@ -1,0 +1,213 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/course.css' %}" />
+{% endblock %} {% block content %}
+<!-- Hero Image of the home page -->
+<div class="heroImage">
+  <div class="hero-heading text-white text-center">
+    <h1>{{course.hero_img_title}}</h1>
+    <p>{{course.hero_img_title_description}}</p>
+  </div>
+</div>
+<!-- End of the hero image  -->
+<div id="course-container" class="container-fluid">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="course-details d-flex justify-content-start mt-5">
+        <div
+          class="detail bg-white p-3 shadow"
+          style="border-left: 5px solid #74c043"
+        >
+          <div class="d-flex space-between-start gap-4">
+            <i class="fas fa-graduation-cap align-self-center"></i>
+            <div>
+              <small>University Partner</small><br />
+              <strong>{{course.university_name}}</strong>
+            </div>
+          </div>
+        </div>
+        <div
+          class="detail bg-white p-3 shadow"
+          style="border-left: 5px solid #74c043"
+        >
+          <div class="d-flex space-between-start gap-4">
+            <i class="far fa-clock align-self-center"></i>
+            <div>
+              <small>Course Duration</small><br />
+              <strong>{{course.course_duration}}</strong>
+            </div>
+          </div>
+        </div>
+        <div
+          class="detail bg-white p-3 shadow"
+          style="border-left: 5px solid #74c043"
+        >
+          <div class="d-flex space-between-start gap-4">
+            <i class="far fa-clock align-self-center"></i>
+            <div>
+              <small>Total Credits</small><br />
+              <strong>{{course.total_create}}</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="course-intro d-flex justify-content-start">
+        <div
+          class="bg-white shadow"
+          style="padding: 30px 0px 38px 30px; min-height: 433px"
+        >
+          <div class="d-flex justify-content-start gap-5">
+            <div class="course-img">
+              <img
+              style="width: 277px;"
+                src="{{course.course_img.url}}"
+                alt="{{course.course_title}}"
+              />
+            </div>
+            <div class="course-body">
+              <div
+                class="
+                  course-heading
+                  d-flex
+                  align-items-baseline
+                  justify-content-between
+                "
+              >
+                <h1>{{course.course_title}}</h1>
+              </div>
+
+              <p class="mt-3">{{course.course_description}}</p>
+            </div>
+          </div>
+          <div class="contact-us-to-enrol" style="display: block">
+            <button type="button" class="btn text-uppercase" onclick="window.location.href=`{% url 'contact' %}`">
+              Contact Us To Enroll
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="requirements">
+        <div class="bg-white shadow" style="padding: 10px 11px 10px 0px">
+          <h3 style="padding: 0px 10px">Requirements</h3>
+          <ul>
+            <li class="fw-bold">Academic Level</li>
+            <ul>
+              <li>{{course.academic_level}}</li>
+              <li>{{course.academic_level_I}}</li>
+            </ul>
+          </ul>
+          <ul>
+            <li class="fw-bold">English Proficiency</li>
+            <ul>
+              <li>{{course.english_proficiency}}</li>
+              <li>{{course.english_proficiency_I}}</li>
+            </ul>
+          </ul>
+          <ul>
+            <li style="text-align: justify">
+              {{course.english_proficiency_II}}
+            </li>
+            <ul>
+              <li>{{course.sub_english_proficiency_I}}</li>
+              <li>{{course.sub_english_proficiency_II}}</li>
+            </ul>
+          </ul>
+          <ul>
+            <li style="text-align: justify">
+              {{course.english_proficiency_III}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="courses bg-white shadow p-4 mb-5">
+    <h2 class="text-center">Course Curriculam</h2>
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <div class="year">
+          <ul>
+            <li class="course-year">Year 1: {{course.course_level}}</li>
+            <ul style="margin-left: -14px">
+              <li class="course-modules">
+                4CI018: {{course.level_subject_name}}
+              </li>
+              <li class="course-modules">
+                4CS001: {{course.level_subject_name_I}}
+              </li>
+              <li class="course-modules">
+                4CS015: {{course.level_subject_name_II}}
+              </li>
+              <li class="course-modules">
+                4CS016: {{course.level_subject_name_III}}
+              </li>
+              <li class="course-modules">
+                4CS017: {{course.level_subject_name_IV}}
+              </li>
+              <li class="course-modules">
+                4MM013: {{course.level_subject_name_V}}
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="year">
+          <ul>
+            <li class="course-year">Year 2: Level 5</li>
+            <ul style="margin-left: -14px">
+              <li class="course-modules">
+                4CI018: {{course.level_subject_name}}
+              </li>
+              <li class="course-modules">
+                4CS001: {{course.level_subject_name_I}}
+              </li>
+              <li class="course-modules">
+                4CS015: {{course.level_subject_name_II}}
+              </li>
+              <li class="course-modules">
+                4CS016: {{course.level_subject_name_III}}
+              </li>
+              <li class="course-modules">
+                4CS017: {{course.level_subject_name_IV}}
+              </li>
+              <li class="course-modules">
+                4MM013: {{course.level_subject_name_V}}
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="year">
+          <ul>
+            <li class="course-year">Year 3: Level 6</li>
+            <ul style="margin-left: -14px">
+              <li class="course-modules">
+                4CI018: {{course.level_subject_name}}
+              </li>
+              <li class="course-modules">
+                4CS001: {{course.level_subject_name_I}}
+              </li>
+              <li class="course-modules">
+                4CS015: {{course.level_subject_name_II}}
+              </li>
+              <li class="course-modules">
+                4CS016: {{course.level_subject_name_III}}
+              </li>
+              <li class="course-modules">
+                4CS017: {{course.level_subject_name_IV}}
+              </li>
+              <li class="course-modules">
+                4MM013: {{course.level_subject_name_V}}
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="circle"></div>
+{% endblock %}

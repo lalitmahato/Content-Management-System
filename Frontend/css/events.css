@@ -1,0 +1,39 @@
+.event-type:hover {
+  background-color: transparent;
+  color: #198754;
+}
+.page {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.page-posts span {
+  color: #198754;
+}
+.event-image {
+  min-height: 280px;
+}
+.event-paginate {
+  padding: 13px 20px;
+  transition: 0.5s ease-in-out;
+  border-radius: 50px !important;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.05);
+  color: #808080 !important;
+  background: #fff !important;
+  font-weight: 700;
+  text-align: center;
+}
+.event-paginate:hover {
+  background: #1ea69a !important;
+  color: #fff !important;
+}
+.active-event-paginate {
+  background: #1ea69a !important;
+  color: #fff !important;
+}
+.paginate li a,
+.paginate li a:hover,
+.paginate li a:focus {
+  background: #198754;
+  color: #fff;
+  border-radius: 5px;
+}

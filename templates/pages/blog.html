@@ -1,0 +1,63 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/blogs.css' %}" />
+{% endblock %} {% block content %}
+<div class="hero-image"></div>
+<section id="blogs">
+  <div class="container">
+    <div class="row blog">
+      <div class="blog-left col-md-8 mt-5 mb-5">
+        <div id="content" class="blogContent">
+          {% for blog in blogs %}
+          <div
+            class="blog"
+            onclick="window.location.href=`{% url 'blogs' blog.id %}`"
+            key="{{blog.id}}"
+          >
+            <div class="blog-flex mt-5">
+              <div class="blog-image">
+                <img src="{{blog.blog_image.url}}" />
+              </div>
+              <div class="blog-description ps-4">
+                <h3 class="pt-3">{{blog.blog_title}}</h3>
+                <div class="blog-span d-flex justify-content-start gap-4">
+                  <div class="blog-releaseDate">
+                    <i class="far fa-calendar" aria-hidden="true"></i>
+                    <span>{{blog.list_date}}</span>
+                  </div>
+                  <div class="blog-categories">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                    <span>{{blog.blog_tag}}</span>
+                  </div>
+                </div>
+                <p class="pe-2 pt-3">{{blog.blog_describe | truncatewords:200}}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <nav class="paginate mt-4 mb-5" aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <div id="blogPaginationNumbers" class="d-flex gap-3"></div>
+          </ul>
+        </nav>
+      </div>
+      <div class="blog-right col-md-4">
+        <h3>Recent Posts</h3>
+        {% for blog in blogs %}
+        <div class="recent-posts">
+          <div class="post-image">
+            <img src="{{blog.blog_image.url}}" alt="..." />
+          </div>
+          <div class="post-info ps-3">
+            <span>{{blog.list_date}}</span>
+            <p><a href="{% url 'blogs' blog.id %}">{{blog.blog_title}}</a></p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %} {% block script %}
+<script src="{% static 'js/blog.js' %}"></script>
+{% endblock %}

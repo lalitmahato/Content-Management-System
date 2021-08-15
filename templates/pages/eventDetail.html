@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/eventDetail.css' %}" />
+{% endblock %} {% block content %}
+<main>
+  <div
+    class="hero-image"
+    style="
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('{{eventDetails.event_image.url}}');background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    "
+  >
+    <div class="event-title text-center text-white">
+      <span class="event-date">{{eventDetails.event_date}}</span>
+      <h1>{{eventDetails.title}}</h1>
+      <span class="event-organized-by"
+        >by <span class="organizer">Herald College</span>
+      </span>
+    </div>
+  </div>
+  <div class="event-details mt-4 mb-5">
+    <div class="container">
+      <h2>Event Overview</h2>
+      <div class="row gap-5">
+        <div class="col-md-8">
+          <p class="text-muted">{{eventDetails.description}}</p>
+        </div>
+        <div class="col-md-3 mt-5">
+          <div class="event-organizer">
+            <img
+              src="{% static 'img/hck_ing_group_logo.png' %}"
+              class="w-100"
+              alt=""
+            />
+          </div>
+          <div class="event-location text-muted mt-5">
+            <h5>Location</h5>
+            <span class="fw-bold text-success"
+              >{{eventDetails.location_detail}}</span
+            >
+          </div>
+          <div class="event-time text-muted mt-5">
+            <h5>Time</h5>
+            <span class="fw-bold text-success"
+              >{{eventDetails.event_time}}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

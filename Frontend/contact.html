@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./img/hck_img.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome css -->
+    <script src="https://kit.fontawesome.com/5fe61622a5.js"></script>
+    <link rel="stylesheet" href="./css/static.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+    <title>Herald College</title>
+  </head>
+
+  <body>
+    <!-- Navigation Start -->
+    <header id="header"></header>
+    <!-- Navigation End -->
+
+    <!-- Body Part of the page start -->
+    <main>
+      <section class="contact-banner">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d808.6661870571276!2d85.33824971351524!3d27.718539282514023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb196de5da5741%3A0x652792640c70ede9!2sHerald+College!5e0!3m2!1sne!2snp!4v1459260028633"
+          width="100%"
+          height="450"
+          frameborder="0"
+          style="border: 0"
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0"
+          class="google-map-embeded"
+        ></iframe>
+      </section>
+      <!-- Contact Form start -->
+      <section class="contact mb-5" style="border-radius: 5px">
+        <div class="container">
+          <div class="title">
+            <h1>Contact Form</h1>
+            <p class="right-styled-para">Contact us from here</p>
+          </div>
+          <div class="contact_us">
+            <div class="contact-input">
+              <form name="Contact" method="POST">
+                <div class="Contact-input_area">
+                  <label for="name" class="-form-label font-weight-bold"
+                    >Name</label
+                  >
+                  <input
+                    id="name"
+                    type="text"
+                    class="@error('name') is-invalid @enderror"
+                    name="name"
+                    autocomplete="name"
+                    placeholder="Your Name"
+                    autofocus
+                  />
+
+                  <label for="email" class="-form-label font-weight-bold"
+                    >Email Address</label
+                  >
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="Your Email"
+                  />
+                  <label for="number" class="-form-label font-weight-bold"
+                    >Phone Number</label
+                  >
+                  <input
+                    id="number"
+                    type="text"
+                    name="number"
+                    autocomplete="number"
+                    placeholder="Your Phone Number"
+                  />
+                </div>
+                <div class="Contact-input_textarea">
+                  <label for="message" class="-form-label font-weight-bold"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    type="text"
+                    cols="40"
+                    rows="6"
+                    name="message"
+                    autocomplete="message"
+                    placeholder="Type Something..."
+                  ></textarea>
+                </div>
+                <div class="send_message">
+                  <button class="btn btn-outline-primary">Send Message</button>
+                </div>
+              </form>
+            </div>
+            <div class="contact-information">
+              <p class="contact-details">
+                <span class="label phone">
+                  <i class="fas fa-phone-alt contact-i"></i>
+                  Phone<br />
+                  +977 - 01 - 4444618
+                </span>
+              </p>
+              <p class="contact-details">
+                <span class="label mphone">
+                  <i class="fas fa-mobile-alt contact-i"></i>
+                  Mobile<br />
+                  +977 - 9851035699
+                </span>
+              </p>
+              <p class="contact-details">
+                <span class="label fax">
+                  <i class="fas fa-fax fax contact-i"></i>
+                  Fax<br />
+                  +977 -01 - 4443533
+                </span>
+              </p>
+              <p class="contact-details">
+                <span class="label email">
+                  <i class="fas fa-envelope contact-i"></i>
+                  Email<br />
+                  info@nepalticketing.com
+                </span>
+              </p>
+              <p class="contact-details">
+                <span class="label address">
+                  <i class="fas fa-map-marker-alt contact-i"></i>
+                  Address<br />
+                  Thamel, Kathmandu, Nepal
+                </span>
+              </p>
+
+              <p class="contact-details">
+                <span class="label post-box">
+                  <i class="fas fa-mail-bulk contact-i"></i>
+                  P O Box<br />
+                  25790, Kathmandu
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Form End -->
+    </main>
+    <!-- Body Part of the page end -->
+
+    <!-- Footer Start -->
+    <footer id="footer" class="footer"></footer>
+    <!-- Footer End -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/Header.js"></script>
+    <script src="./js/Footer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+body {
+  background-color: #fafafa;
+}
+.heroImage {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/Course/course.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 73px;
+  height: 80vh;
+}
+.hero-heading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero-heading p {
+  font-size: 17px;
+}
+#course-container {
+  padding-right: var(--bs-gutter-x, 5rem);
+  padding-left: var(--bs-gutter-x, 5rem);
+}
+.course-intro {
+  padding-top: 10px;
+  gap: 2.8rem;
+}
+.course-body .course-heading {
+  padding: 0px 50px 0px 0px;
+}
+.course-body h1 {
+  font-size: 18px;
+}
+.course-body p {
+  margin-top: 3px;
+  text-align: justify;
+  padding: 0px 50px 0px 0px;
+}
+.course-intro small {
+  color: #aab6bd;
+}
+.contact-us-to-enrol {
+  width: 100%;
+  text-align: center;
+  transform: translate(20px, 0px);
+}
+.contact-us-to-enrol button {
+  height: 45px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #74c043;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.contact-us-to-enrol button:hover {
+  transform: translateY(-7px);
+  color: #fff;
+}
+.about-this-course {
+  margin-top: -150px;
+}
+.course-details {
+  gap: 2.7rem;
+}
+.course-details p {
+  text-align: justify;
+}
+.requirements {
+  padding: 47px 0 20px;
+}
+.course-year {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.course-year::before {
+  content: "";
+  position: absolute;
+  color: #fff;
+  background: #74c043;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #74c043;
+  margin-left: -19.5px;
+  margin-top: 8px;
+}
+.course-modules {
+  list-style: none;
+  padding-bottom: 13px;
+}
+.course-modules::before {
+  content: "";
+  position: absolute;
+  color: #fff;
+  background: #dddae3;
+  width: 10px;
+  height: 10px;
+  margin-left: -18.5px;
+  margin-top: 8px;
+  border-radius: 50px;
+}

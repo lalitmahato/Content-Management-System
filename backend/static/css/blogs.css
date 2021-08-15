@@ -1,0 +1,126 @@
+.hero-image {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/HeroImages/heroImg1.png");
+  height: 50vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.link {
+  text-decoration: none !important;
+}
+/* blogs Start */
+.blog-flex {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: #fff;
+  height: 100%;
+  max-height: 500px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.blog-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 5px 0px 0px 5px;
+}
+.blog i {
+  color: #379cf4;
+}
+.blog-description {
+  padding-right: 0%;
+}
+.blog-description h3 {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 30px;
+  color: rgb(19, 48, 74);
+}
+.blog-span span {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 30px;
+  color: rgb(38, 59, 77);
+}
+.blog-description p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 30px;
+  color: rgb(83, 98, 111);
+}
+.blogs-paragraph {
+  display: none;
+}
+
+.blog-right h3 {
+  font-size: 16.3833px;
+  font-weight: 700;
+  line-height: 30px;
+  margin-bottom: 12px;
+}
+.blog-right {
+  padding: 100px 50px;
+}
+.recent-posts {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 15px;
+}
+.recent-posts a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+  font-weight: 500;
+}
+.post-image img {
+  height: 60px;
+  max-height: 60px;
+  max-width: 60px;
+  height: 60px;
+  border-radius: 3px;
+  left: -65px;
+}
+.post-info span {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 15px;
+  color: rgb(83, 98, 111);
+}
+.blog-paginate {
+  padding: 13px 20px;
+  transition: 0.5s ease-in-out;
+  border-radius: 50px !important;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.05);
+  color: #808080;
+  font-weight: 700;
+  text-align: center;
+}
+.active-blog-paginate {
+  background: #1ea69a !important;
+  color: #fff !important;
+}
+/* blogs Ends */
+
+@media (max-width: 991px) {
+  .blog {
+    display: initial;
+  }
+  .blog-left {
+    width: 100%;
+  }
+  .blog-right {
+    display: none !important;
+  }
+}
+@media (max-width: 840px) {
+  .blog-image img {
+    width: 100%;
+    max-width: 800px !important;
+    height: 100%;
+  }
+  .blog-flex {
+    display: block !important;
+    max-height: 100%;
+  }
+}

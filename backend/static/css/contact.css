@@ -1,0 +1,136 @@
+/* Contact Us Start */
+.contact {
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  margin: auto;
+  margin-top: 1%;
+  padding-top: 15px;
+  height: auto;
+}
+/* Simple Hover before after paragraph End */
+.right-styled-para {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 0 45px 0 0;
+  padding-right: 45px;
+  position: relative;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(18, 48, 74, 0.7);
+  transition: padding 0.5s;
+}
+.right-styled-para:after {
+  content: "";
+  background-color: rgb(55, 156, 244);
+  position: absolute;
+  width: 25px;
+  height: 6px;
+  border-radius: 4px;
+  top: 12px;
+  left: auto;
+  right: 0 !important;
+  transition: all;
+}
+.title:hover .right-styled-para {
+  padding-right: 50px;
+}
+/* Simple Hover before after paragraph End */
+.contact_us {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* Contact Form Starts */
+.contact-input {
+  width: 50%;
+  padding: 30px;
+}
+.Contact-input_area label {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.Contact-input_area input,
+.Contact-input_textarea textarea {
+  display: block;
+  width: 100%;
+  color: #707070;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 16px;
+  border: 1px solid#ced4da;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 24px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.5s ease-in-out;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+}
+.Contact-input_area input:focus {
+  box-shadow: none;
+  border-color: #379cf4;
+}
+.Contact-input_textarea textarea:focus {
+  box-shadow: none;
+  border-color: #379cf4;
+}
+.send_message button {
+  border: 2px solid;
+  transition: 0.9s;
+  font-weight: bold;
+  padding: 10px 25px;
+}
+.send_message button:hover {
+  border: 2px solid #00baeb;
+  background-color: transparent;
+  color: #3490dc;
+  border-radius: 15px;
+}
+/* Contact Us End */
+.contact-information {
+  width: 50%;
+  padding: 30px;
+}
+.contact-details {
+  padding: 10px;
+}
+.contact-i {
+  color: #707070 !important;
+  margin-left: 10px;
+  position: relative;
+}
+.contact-details a {
+  text-decoration: none;
+  color: #707070;
+  padding-top: 2px;
+  padding-left: 20px;
+  display: block;
+  line-height: 1.6;
+  font-size: 16px;
+}
+@media (max-width: 1200px) {
+  .content-right {
+    margin: 1%;
+  }
+  .send_message button {
+    width: 45% !important;
+  }
+}
+@media (max-width: 909px) {
+  /* Contact Page Responsive Css */
+  .contact_us {
+    display: initial !important;
+  }
+  .contact-input {
+    width: 100% !important;
+  }
+  .contact-information {
+    width: 100% !important;
+  }
+}
+@media (max-width: 445px) {
+  .send_message button {
+    width: 100% !important;
+  }
+}

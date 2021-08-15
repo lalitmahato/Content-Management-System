@@ -1,0 +1,27 @@
+main {
+  position: relative;
+  height: 700px;
+}
+.login {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.login .container {
+  min-width: 500px;
+}
+.login-header img {
+  max-width: 200px;
+}
+.login button {
+  background: #198754;
+  color: #fff;
+  padding: 10px 40px;
+  border-radius: 50px;
+}
+.login button:hover,
+.login button:focus {
+  background: #198754;
+  color: #fff;
+}

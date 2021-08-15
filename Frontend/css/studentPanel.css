@@ -1,0 +1,106 @@
+header .navbar-expand-lg {
+  z-index: 1;
+}
+
+header .left .navbar-toggler-icon {
+  margin-left: 5px;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+header .navbar-brand {
+  margin-left: 25px;
+}
+
+header .navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 0.2rem;
+  padding-left: 0.2rem;
+}
+
+header .navbar-expand-lg .navbar-nav .disabled {
+  color: #74c043 !important;
+}
+
+#side-nav .side-navbar {
+  width: 0%;
+  display: none;
+  position: fixed;
+  top: 65px;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.left .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,.55)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.left .navbar-toggler-icon:hover {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(116, 192, 67, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+/* Css for course title inside student panal */
+
+.course-title {
+  font-size: 40px;
+}
+
+.course-year {
+  font-size: 20px;
+}
+
+.card {
+  border-radius: 0.5rem;
+}
+
+/* Css for course title inside student panal ends */
+
+.module-color {
+  height: 180px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.module-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.module-code {
+  margin-top: 4px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #6c757c;
+  line-height: 1.3;
+}
+
+.routine {
+  padding: 0px;
+}
+
+.routine li {
+  display: inline-block;
+  font-weight: 500;
+  color: #6c757c;
+  padding: 0 9px;
+}
+.module:nth-child(1) .module-color{
+  background-color: orange;
+}
+.module:nth-child(1) .module-title {
+  color: orange;
+}
+.module:nth-child(2) .module-color{
+  background-color: purple;
+}
+.module:nth-child(2) .module-title {
+  color: purple;
+}
+.module:nth-child(3) .module-color{
+  background-color: green;
+}
+.module:nth-child(3) .module-title {
+  color: green;
+}

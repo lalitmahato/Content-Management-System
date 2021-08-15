@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}" />
+{% endblock %} {% block content %}
+<section class="executive-team mt-3">
+  <div class="container">
+    <h1 class="mb-4">Our Executive Team</h1>
+    <div class="member row" style="text-align: justify">
+      {% for abouts in member_details %}
+      <div class="member-image col-lg-2 col-md-5 mb-5">
+        <img class="w-100 mt-2" src="{{abouts.image.url}}" alt="" />
+      </div>
+      <div class="member-details col-lg-10 col-md-7">
+        <h2 class="member-name">{{abouts.member_name}}</h2>
+        <p class="member-detail mt-0">{{abouts.member_description}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,271 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+{% endblock %} {% block content %}
+<!-- Hero Slider Start -->
+<section class="banner">
+  <div
+    id="carouselExampleIndicators"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+  <!-- Previous and next slider button indicators -->
+    <div class="carousel-indicators banner-indicator">
+      {% for heroslides in heroslidesList %} {% if forloop.counter0 == 0 %}
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="{{forloop.counter0}}"
+        class="active"
+        aria-current="true"
+        aria-label="Slide {{forloop.counter0}}"
+      ></button>
+      {% else %}
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="{{forloop.counter0}}"
+        aria-label="Slide {{forloop.counter0}}"
+      ></button>
+      {% endif %} {% endfor %}
+    </div>
+    <!-- Hero Slider images and Captions for each image -->
+    <div class="carousel-inner">
+      {% for heroslides in heroslidesList %} {% if forloop.counter0 == 0 %}
+      <div class="carousel-item item active">
+        <img
+          src="{{heroslides.hero_slide.url}}"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div
+          class="individual-caption carousel-caption d-md-block text-capitalize"
+        >
+          <h1 class="font-weight-bolder">{{heroslides.title}}</h1>
+          <p>{{heroslides.description}}</p>
+        </div>
+      </div>
+      {% else %}
+      <div class="carousel-item item">
+        <img
+          src="{{heroslides.hero_slide.url}}"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div
+          class="individual-caption carousel-caption d-md-block text-capitalize"
+        >
+          <h1 class="font-weight-bolder">{{heroslides.title}}</h1>
+          <p>{{heroslides.description}}</p>
+        </div>
+      </div>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- Hero Slider End -->
+
+      <!-- Why Herald College Start -->
+      <section class="why-hearld-college mt-5">
+        <div class="container">
+          <h1 class="text-capitalize text-center mb-2">why herald college</h1>
+          <div class="row mt-5 mb-5">
+            <div class="col-md-6" id="whyHerald">
+              {% if whyWithUs %}
+              {% for desc in whyWithUs%}
+              <hr class="why-herald-horizontal-line">
+              <div class="card why" key={{desc.id}}>
+                  <div class="card-header">
+                      <h2 class="mb-0">
+                          <button class="btn btn-link" type="button">{{desc.title}}</button>
+                      </h2>
+                  </div>
+                  <div class="card-body why-description">{{desc.description}}</div>
+              </div>
+              {% endfor %}
+              {% else %}
+              <div class="col-md-12">
+                <p>No Listings Available</p>
+              </div>
+              {% endif %}
+            </div>
+            <!-- Images for each why someone should join herald college -->
+            <div class="col-md-6" id="whyHeraldImage">
+              {% for img in whyWithUs%} {% if forloop.counter0 == 0 %}
+              <img class="why-image w-100 active" src="{{img.image.url}}" alt="" />
+              {% else %}
+              <img class="why-image w-100" src="{{img.image.url}}" alt="" />
+              {% endif %} {% endfor %}
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Why Herald College End -->
+
+      <!-- This sections contains class and events of the home page -->
+<section class="news-events mb-5">
+  <h1 class="text-capitalize text-center">Blogs and Events</h1>
+  <div class="container">
+    <!-- Blogs Start -->
+    <div class="news mb-5">
+      <h2 class="text-capitalize font-weight-bold">Blogs</h2>
+      <div class="row news-row">
+          {% for blog in blogs %}
+            {% if forloop.counter0 == 0 %}
+            <div class="common col-sm primary" onclick="window.location.href=`{% url 'blogs' blog.id %}`" >
+              <div class="news-detail primary-news">
+                <img
+                  class="primary-news-image w-100"
+                  src="{{blog.blog_image.url}}"
+                  alt=""
+                />
+                <div class="news-description text-white">
+                  <span class="type">{{blog.blog_tag}}</span>
+                  <h3 class="news-title">
+                    {{blog.blog_title}}
+                  </h3>
+                  <small class="created">Armin Vans - August 7, 2019</small>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+          {% endfor %}
+        <div class="col-sm secondary-part">
+          {% for blog in blogs %}
+            {% if forloop.counter0 == 1 %}
+            <div class="common col-sm secondary d-flex flex-wrap" onclick="window.location.href=`{% url 'blogs' blog.id %}`">
+              <div class="news-detail secondary-news">
+                <img
+                  class="secondary-news-image w-100"
+                  src="{{blog.blog_image.url}}"
+                  alt=""
+                />
+                <div class="news-description text-white">
+                  <span class="type">{{blog.blog_tag}}</span>
+                  <h4 class="news-title">
+                    {{blog.blog_title}}
+                  </h4>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+          {% endfor %}
+          <div class="rest-news-responsive row mt-1">
+            {% for blog in blogs %}
+              {% if forloop.counter0 == 2 %}
+              <div class="common col-sm rest" onclick="window.location.href=`{% url 'blogs' blog.id %}`">
+                <div class="news-detail rest-news">
+                  <img
+                    class="rest-news-image w-100"
+                    src="{{blog.blog_image.url}}"
+                    alt=""
+                  />
+                  <div class="news-description text-white">
+                    <span class="type">{{blog.blog_tag}}</span>
+                    <h6 class="news-title">
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+            {% endfor %}
+            {% for blog in blogs %}
+              {% if forloop.counter0 == 3 %}
+              <div class="common col-sm rest" onclick="window.location.href=`{% url 'blogs' blog.id %}`">
+                <div class="news-detail rest-news">
+                  <img
+                    class="rest-news-image w-100"
+                    src="{{blog.blog_image.url}}"
+                    alt=""
+                  />
+                  <div class="news-description text-white">
+                    <span class="type">{{blog.blog_tag}}</span>
+                    <h6 class="news-title">
+                      {{blog.blog_title}}
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Blogs End -->
+
+    <!-- Events Start -->
+    <div class="events">
+      <h2 class="text-capitalize font-weight-bold">Events</h2>
+      <div
+        class="
+          row row-cols-1 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-xs-1
+          g-4
+        "
+      >
+        {% for event in events %}
+        <div class="col-md-3">
+          <div class="card h-100">
+            <div class="event-image-date">
+              <img
+                src="{{event.event_image.url}}"
+                class="card-img-top"
+                alt="..."
+              />
+              <span class="event-date">{{event.event_date}}</span>
+            </div>
+            <div class="card-body">
+              <span>Conference</span>
+              <h5 class="card-title">
+                {{event.title}}
+              </h5>
+              <p class="text-center">
+                <i class="far fa-clock" aria-hidden="true"></i> {{event.event_time}}
+              </p>
+              <a href="{% url 'contact' %}" class="btn btn-dark w-100">Interested</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- Events End -->
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container testimony-container">
+    <h1 class="text-capitalize text-center">Testimonials</h1>
+    <div id="slider" class="section-center d-flex justify-content-between">
+      <button id="prev" class="prev-btn">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      {% if reviews %}
+      <div id="testimony">
+        {% for review in reviews %}
+        <article id="testimonys" class="testimony" key="{{review.id}}">
+          <img
+            class="person-img"
+            src="{{review.image.url}}"
+            alt="Reviwer Image"
+          />
+          <h4>{{review.name}}</h4>
+          <p class="title">{{review.course}}</p>
+          <p class="text">{{review.description}}</p>
+        </article>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="col-md-12">
+        <p>No Reviews were found </p>
+      </div>
+      {% endif %}
+      <button id="next" class="next-btn">
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</section>
+{% endblock %} {% block script %}
+<script src="{% static 'js/index.js' %}"></script>
+<script src="{% static 'js/whyheraldcollege.js' %}"></script>
+<script src="{% static 'js/testimonial.js' %}"></script>
+{% endblock %}

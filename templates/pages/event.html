@@ -1,0 +1,89 @@
+{% extends 'base.html' %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/event.css' %}" />
+{% endblock %} {% block content %}
+<main>
+  <div class="page-posts text-muted pt-3 pb-1">
+    <div class="container d-flex justify-content-between align-items-baseline">
+      <h2>Events</h2>
+      <div class="page">
+        Showing
+        <span id="currentBlogsPageEvents" class="current-page-events fw-bold"
+          >0</span
+        >
+        of
+        <span id="totalBlogsPosts" class="total-events fw-bold">0</span>
+        Events in Page
+        <span id="currentPage" class="fw-bold">0</span>
+      </div>
+    </div>
+  </div>
+  <div class="events">
+    <div class="container">
+      <div class="row" id="eventContainer">
+        {% for event in events %}
+        <div
+          class="col-md-4 mb-4"
+          onclick="window.location.href=`{% url 'event_detail' event.id %}`"
+          key="{{event.id}}"
+        >
+          <div class="card">
+            <img
+              src="{{event.event_image.url}}"
+              class="card-img-top event-image"
+              alt="{{event.title}}"
+            />
+            <div class="card-footer bg-transparent border-top-0">
+              By
+              <span class="by-whom text-success fw-bold pe-1 ps-1"
+                >Herald College</span
+              >
+              on
+              <span class="uploaded-date">{{event.event_date}}</span>
+            </div>
+            <div class="card-body">
+              <div
+                type="button"
+                class="event-type btn btn-outline-success mb-3"
+              >
+                {{event.event_location_campus}}
+              </div>
+              <h5 class="card-title">{{event.title}}</h5>
+            </div>
+            <!-- <div class="card-footer bg-transparent border-top-0">
+              By
+              <span class="by-whom text-success fw-bold pe-1 ps-1"
+                >Herald College</span
+              >
+              on
+              <span class="uploaded-date">{{event.event_date}}</span>
+            </div> -->
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <nav class="paginate mt-4 mb-5" aria-label="Page navigation example">
+        <ul class="pagination justify-content-between align-items-baseline">
+          <li class="page-item">
+            <a
+              class="page-link"
+              href="#"
+              aria-label="Previous"
+              id="previousEventPage"
+            >
+              <span aria-hidden="true">Previous Page</span>
+            </a>
+          </li>
+          <div id="eventPaginationNumbers" class="d-flex gap-3"></div>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next" id="nextEventPage">
+              <span aria-hidden="true">Next Page</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</main>
+{% endblock %} {% block script %}
+<script src="{% static 'js/events.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,33 @@
+.hero-image {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/1.jpg");
+  height: 70vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.event-date {
+  font-size: 20px;
+  line-height: 60px;
+  text-align: center;
+}
+.event-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.event-organized-by {
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+}
+.organizer {
+  text-decoration: underline;
+}
+.event-details p {
+  text-align: justify;
+  line-height: 30px;
+  font-weight: 500;
+}
